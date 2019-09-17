@@ -1,3 +1,4 @@
+
 <mvc:View xmlns:core="sap.ui.core" xmlns:mvc="sap.ui.core.mvc" xmlns="sap.m" controllerName="ovly.extensible.controller.S1"
 	xmlns:html="http://www.w3.org/1999/xhtml">
 	<Page id="page" title="{i18n>s1_title}">
@@ -15,7 +16,21 @@
 							<ObjectStatus text="{DimensionHeight} x {DimensionWidth} x {DimensionDepth}" />
 						</firstStatus>
 						<secondStatus>
-							<ObjectStatus text="Volume" />
+							<ObjectStatus text="{ 
+								parts: 
+								[  
+									{
+										path:'DimensionHeight'
+									},
+									{
+										path:'DimensionWidth' 
+									},
+									{
+										path:'DimensionDepth' 
+									}
+								],
+								formatter: '.meuFormatador.calculateVolume'
+								}" />
 						</secondStatus>
 					</ObjectListItem>
 				</items>
