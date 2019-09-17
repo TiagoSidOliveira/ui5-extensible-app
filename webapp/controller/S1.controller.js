@@ -1,9 +1,12 @@
 sap.ui.define([
-	"sap/ui/core/mvc/Controller"
-], function (Controller) {
+	"ovly/extensible/controller/BaseController",
+	"ovly/extensible/model/formatter"
+], function (BaseController, Formatador) {
 	"use strict";
 
-	return Controller.extend("ovly.extensible.controller.S1", {
+	return BaseController.extend("ovly.extensible.controller.S0", {
+		
+		meuFormatador: Formatador,
 
 		onInit: function () {
 
